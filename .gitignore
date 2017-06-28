@@ -1,0 +1,13 @@
+CMakeCache.txt
+CMakeFiles
+*.cmake
+
+# Visual Studio binaries
+*.vcxproj
+*.filters
+*.sln
+.vs/
+*.dir/
+Release/
+Debug/
+*.exe

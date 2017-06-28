@@ -2,8 +2,8 @@
 #include <vector>
 #include <algorithm>
 #include <ctime>
-#include <boost/random/random_device.hpp>
-#include <boost/random/uniform_int_distribution.hpp>
+#include <random>
+#include <string>
 
 using namespace std;
 
@@ -34,13 +34,13 @@ int main() {
   // const int bufsize = height*width;
   // int* pOutBuffer = new int[height*width];
 
-  boost::random::random_device rng;
-  boost::random::uniform_int_distribution<> uniform(0, traversable.size() - 1);
+  default_random_engine rng;
+  uniform_int_distribution<int> distribution(0, traversable.size() - 1);
   const int TIMES = 100;
   vector<pair<int, int>> tests;
   for (int t = 0; t < TIMES; t++) {
-    int u = traversable[uniform(rng)];
-    int v = traversable[uniform(rng)];
+    int u = traversable[distribution(rng)];
+    int v = traversable[distribution(rng)];
     tests.push_back({u % width, u / width});
     tests.push_back({v % width, v / width});
   }
